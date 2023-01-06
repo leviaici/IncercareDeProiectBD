@@ -34,6 +34,11 @@ namespace IncercareDeProiectBD
             c.Close();
         }
 
+        public void hideForm()
+        {
+            Hide();
+        }
+
         private void evidentaMeniuForm_Load(object sender, EventArgs e)
         {
 
@@ -64,8 +69,11 @@ namespace IncercareDeProiectBD
             cmd2.Parameters.Add("PRETDEVANZARE", textBox5.Text);
             OracleDataReader dr2 = cmd2.ExecuteReader();
 
-
             c.Close();
+
+            var newForm = new evidentaOrganizareRetete();
+            hideForm();
+            newForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -83,12 +91,38 @@ namespace IncercareDeProiectBD
 
         private void button2_Click(object sender, EventArgs e)
         {
+            c.Open();
 
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT P.IDPRODUS, P.NUME AS NUMEPRODUS, P.PRETDEPRODUCTIE || ' LEI' AS PRETDEPRODUCTIE, P.PRETDEVANZARE || ' LEI' AS PRETDEVANZARE, CP.NUME AS CATEGORIEPRODUS, R.IDRETETA, B.NUME || ' ' || B.PRENUME AS NUMEBUCATAR, B.POST FROM PRODUS P JOIN CATEGORIEPRODUS CP ON CP.IDCATEGORIEPRODUS = P.IDCATEGORIEPRODUS JOIN RETETA R ON R.IDRETETA = P.IDRETETA JOIN BUCATAR B ON B.IDBUCATAR = R.IDBUCATAR WHERE P.IDPRODUS = :IDPRODUS ORDER BY IDPRODUS";
+            cmd.Parameters.Add("IDPRODUS", textBox1.Text);
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            c.Open();
 
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT P.IDPRODUS, R.IDRETETA, P.NUME AS NUMEPRODUS, DR.IDINGREDIENT, I.NUME AS INGREDIENT, DR.CANTITATE AS CANTITATENECESARA, I.CANTITATE AS STOC, I.UNITATEMASURA FROM PRODUS P JOIN RETETA R ON R.IDRETETA = P.IDRETETA JOIN DETALIURETETA DR ON DR.IDRETETA = R.IDRETETA JOIN INGREDIENT I ON I.IDINGREDIENT = DR.IDINGREDIENT WHERE P.IDPRODUS = :IDPRODUS";
+            cmd.Parameters.Add("IDPRODUS", textBox1.Text);
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -106,6 +140,36 @@ namespace IncercareDeProiectBD
             dataGridView1.DataSource = dt;
 
             c.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "UPDATE RETETA SET IDBUCATAR = :IDBUCATAR, NUME = :NUME WHERE IDRETETA = :IDRETETA";
+            cmd.Parameters.Add("IDBUCATAR", textBox6.Text);
+            cmd.Parameters.Add("NUME", textBox2.Text);
+            cmd.Parameters.Add("IDRETETA", textBox7.Text);
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleCommand cmd2 = new OracleCommand();
+            cmd2.Connection = c;
+            cmd2.CommandText = "UPDATE PRODUS SET IDCATEGORIEPRODUS = :IDCATEGORIEPRODUS, IDRETETA = :IDRETETA, NUME = :NUME, PRETDEPRODUCTIE = :PRETDEPRODUCTIE, PRETDEVANZARE = :PRETDEVANZARE WHERE IDPRODUS = :IDPRODUS ";
+            cmd2.Parameters.Add("IDCATEGORIEPRODUS", textBox4.Text);
+            cmd2.Parameters.Add("IDRETETA", textBox7.Text);
+            cmd2.Parameters.Add("NUME", textBox2.Text);
+            cmd2.Parameters.Add("PRETDEPRODUCTIE", textBox3.Text);
+            cmd2.Parameters.Add("PRETDEVANZARE", textBox5.Text);
+            cmd2.Parameters.Add("IDPRODUS", textBox1.Text);
+            OracleDataReader dr2 = cmd2.ExecuteReader();
+
+            c.Close();
+
+            var newForm = new evidentaOrganizareRetete();
+            hideForm();
+            newForm.Show();
         }
     }
 }
