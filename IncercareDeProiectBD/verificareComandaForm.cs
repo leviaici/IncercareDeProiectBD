@@ -47,5 +47,10 @@ namespace IncercareDeProiectBD
 
             c.Close();
         }
+
+        private void verificareComandaForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

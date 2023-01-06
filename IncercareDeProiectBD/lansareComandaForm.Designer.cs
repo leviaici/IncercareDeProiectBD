@@ -42,14 +42,17 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCloseApp
             // 
             this.buttonCloseApp.AccessibleDescription = "buttonCloseApp";
             this.buttonCloseApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCloseApp.Location = new System.Drawing.Point(340, 392);
+            this.buttonCloseApp.Location = new System.Drawing.Point(448, 392);
             this.buttonCloseApp.Name = "buttonCloseApp";
             this.buttonCloseApp.Size = new System.Drawing.Size(118, 46);
             this.buttonCloseApp.TabIndex = 2;
@@ -167,12 +170,34 @@
             this.dataGridView1.Size = new System.Drawing.Size(308, 105);
             this.dataGridView1.TabIndex = 20;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(448, 254);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(308, 104);
+            this.dataGridView2.TabIndex = 21;
+            // 
+            // button3
+            // 
+            this.button3.AccessibleDescription = "buttonCloseApp";
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(238, 392);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(118, 46);
+            this.button3.TabIndex = 22;
+            this.button3.Text = "Vizualizeaza meniul";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // lansareComandaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label5);
@@ -190,6 +215,7 @@
             this.Name = "lansareComandaForm";
             this.Text = "lansareComandaForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,5 +237,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button3;
     }
 }

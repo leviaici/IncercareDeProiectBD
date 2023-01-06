@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
+using System.Threading;
 
 namespace IncercareDeProiectBD
 {
@@ -20,6 +21,10 @@ namespace IncercareDeProiectBD
         public lansareComandaForm()
         {
             InitializeComponent();
+        }
+        public void hideForm()
+        {
+            Hide();
         }
 
         private void buttonCloseApp_Click(object sender, EventArgs e)
@@ -64,13 +69,40 @@ namespace IncercareDeProiectBD
             OracleCommand cmd3 = new OracleCommand();
             cmd3.Connection = c;
             cmd3.CommandText = "INSERT INTO COMANDA(IDCOMANDA, IDCLIENT, DATACOMANDA, TOTAL, TVA, TIPPLATA) VALUES (COMANDA_IDCOMANDA_SEQ.nextval, :IDCLIENT, SYSDATE, :TOTAL, 9, :TIPPLATA)";
+            
+            OracleCommand cmd4 = new OracleCommand();
+            cmd4.Connection = c;
+            cmd4.CommandText = "SELECT * FROM COMANDA WHERE IDCLIENT = :IDCLIENT AND TOTAL = :TOTAL AND TIPPLATA = :TIPPLATA";
+            
             cmd3.Parameters.Add("IDCLIENT", textBox4.Text);
             cmd3.Parameters.Add("TOTAL", textBox3.Text);
             cmd3.Parameters.Add("TIPPLATA", textBox5.Text);
+            
+            cmd4.Parameters.Add("IDCLIENT", textBox4.Text);
+            cmd4.Parameters.Add("TOTAL", textBox3.Text);
+            cmd4.Parameters.Add("TIPPLATA", textBox5.Text);
+            
             OracleDataReader dr3 = cmd3.ExecuteReader();
 
+            OracleDataAdapter daNew = new OracleDataAdapter(cmd4);
+            DataTable dtNew = new DataTable();
+            daNew.Fill(dtNew);
+            dataGridView2.DataSource = dtNew;
+
             MessageBox.Show("Comanda lansata cu succes!");
+
             c.Close();
+
+            var newForm = new continuareLansareComandaForm();
+            hideForm();
+            newForm.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var newForm = new meniuForm();
+            hideForm();
+            newForm.Show();
         }
     }
 }

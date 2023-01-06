@@ -106,6 +106,12 @@
     <Compile Include="clientForm.Designer.cs">
       <DependentUpon>clientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="continuareLansareComandaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="continuareLansareComandaForm.Designer.cs">
+      <DependentUpon>continuareLansareComandaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,12 @@
     <Compile Include="managerForm.Designer.cs">
       <DependentUpon>managerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="meniuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="meniuForm.Designer.cs">
+      <DependentUpon>meniuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="verificareComandaForm.cs">
@@ -138,6 +150,9 @@
     <EmbeddedResource Include="clientForm.resx">
       <DependentUpon>clientForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="continuareLansareComandaForm.resx">
+      <DependentUpon>continuareLansareComandaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="managerForm.resx">
       <DependentUpon>managerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="meniuForm.resx">
+      <DependentUpon>meniuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
