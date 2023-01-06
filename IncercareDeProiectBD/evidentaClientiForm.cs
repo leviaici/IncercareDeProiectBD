@@ -87,7 +87,7 @@ namespace IncercareDeProiectBD
 
             c.Close();
         }
-        //TBA afisam pentru manager la client - comanda + produsele din comanda clientului
+        
         private void button4_Click(object sender, EventArgs e)
         {
             c.Open();
@@ -97,6 +97,23 @@ namespace IncercareDeProiectBD
             cmd.CommandText = "SELECT * FROM CLIENT";
             OracleDataReader dr = cmd.ExecuteReader();
 
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT CL.IDCLIENT, CL.NUME || ' ' || CL.PRENUME AS NUMECLIENT, CO.IDCOMANDA, CO.DATACOMANDA, CO.TOTAL, CO.TVA, CO.TIPPLATA, PC.IDPRODUSECOMANDA, PC.IDPRODUS, PC.PRETPERUNITATE FROM CLIENT CL JOIN COMANDA CO ON CL.IDCLIENT = CO.IDCLIENT JOIN PRODUSECOMANDA PC ON PC.IDCOMANDA = CO.IDCOMANDA WHERE CL.IDCLIENT = :IDCLIENT";
+            cmd.Parameters.Add("IDCLIENT", textBox1.Text);
+            OracleDataReader dr = cmd.ExecuteReader();
             OracleDataAdapter da = new OracleDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
