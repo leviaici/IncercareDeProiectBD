@@ -20,10 +20,10 @@ namespace IncercareDeProiectBD
         {
             InitializeComponent();
             c.Open();
-
+            
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "SELECT IDPRODUS, IDCATEGORIEPRODUS, NUME, PRETDEVANZARE || ' LEI'  FROM PRODUS";
+            cmd.CommandText = "SELECT IDPRODUS AS ID, (SELECT NUME FROM CATEGORIEPRODUS WHERE IDCATEGORIEPRODUS = PRODUS.IDCATEGORIEPRODUS) AS CATEGORIE, NUME, PRETDEVANZARE || ' LEI' AS PRET FROM PRODUS";
             OracleDataReader dr = cmd.ExecuteReader();
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);

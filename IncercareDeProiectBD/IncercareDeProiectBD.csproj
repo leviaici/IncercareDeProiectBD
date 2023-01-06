@@ -112,6 +112,60 @@
     <Compile Include="continuareLansareComandaForm.Designer.cs">
       <DependentUpon>continuareLansareComandaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="evidentaBucatariForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="evidentaBucatariForm.Designer.cs">
+      <DependentUpon>evidentaBucatariForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="evidentaClientiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="evidentaClientiForm.Designer.cs">
+      <DependentUpon>evidentaClientiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="evidentaComenziForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="evidentaComenziForm.Designer.cs">
+      <DependentUpon>evidentaComenziForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="evidentaFurnizoriForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="evidentaFurnizoriForm.Designer.cs">
+      <DependentUpon>evidentaFurnizoriForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="evidentaIngredienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="evidentaIngredienteForm.Designer.cs">
+      <DependentUpon>evidentaIngredienteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="evidentaMeniuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="evidentaMeniuForm.Designer.cs">
+      <DependentUpon>evidentaMeniuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="evidentaOrganizareRetete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="evidentaOrganizareRetete.Designer.cs">
+      <DependentUpon>evidentaOrganizareRetete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="evidentaProduseDinComenziForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="evidentaProduseDinComenziForm.Designer.cs">
+      <DependentUpon>evidentaProduseDinComenziForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="evidentaReteteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="evidentaReteteForm.Designer.cs">
+      <DependentUpon>evidentaReteteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +183,12 @@
     </Compile>
     <Compile Include="managerForm.Designer.cs">
       <DependentUpon>managerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="managerLogatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="managerLogatForm.Designer.cs">
+      <DependentUpon>managerLogatForm.cs</DependentUpon>
     </Compile>
     <Compile Include="meniuForm.cs">
       <SubType>Form</SubType>
@@ -153,6 +213,21 @@
     <EmbeddedResource Include="continuareLansareComandaForm.resx">
       <DependentUpon>continuareLansareComandaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="evidentaBucatariForm.resx">
+      <DependentUpon>evidentaBucatariForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="evidentaClientiForm.resx">
+      <DependentUpon>evidentaClientiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="evidentaFurnizoriForm.resx">
+      <DependentUpon>evidentaFurnizoriForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="evidentaIngredienteForm.resx">
+      <DependentUpon>evidentaIngredienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="evidentaMeniuForm.resx">
+      <DependentUpon>evidentaMeniuForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="managerForm.resx">
       <DependentUpon>managerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="managerLogatForm.resx">
+      <DependentUpon>managerLogatForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="meniuForm.resx">
       <DependentUpon>meniuForm.cs</DependentUpon>

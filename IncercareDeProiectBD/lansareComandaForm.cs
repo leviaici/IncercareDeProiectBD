@@ -39,8 +39,8 @@ namespace IncercareDeProiectBD
             OracleCommand cmd1 = new OracleCommand();
             cmd1.Connection = c;
             cmd1.CommandText = "INSERT INTO CLIENT(IDCLIENT, NUME, PRENUME) VALUES (CLIENT_IDCLIENT_SEQ.nextval, :Nume, :Prenume)";
-            String nume = "'" + textBox1.Text + "'";
-            String prenume = "'" + textBox2.Text + "'";
+            String nume = textBox1.Text;
+            String prenume = textBox2.Text;
             cmd1.Parameters.Add("Nume", nume);
             cmd1.Parameters.Add("Preume", prenume);
             OracleDataReader dr1 = cmd1.ExecuteReader();
