@@ -36,9 +36,12 @@ namespace IncercareDeProiectBD
         private void button1_Click(object sender, EventArgs e)
         {
             c.Open();
-            OracleCommand cmd = new OracleCommand("DELETE FROM COMANDA WHERE IDCOMANDA = @IDCOMANDA; COMMIT;", c);
-            cmd.Parameters.Add("@IDCOMANDA", int.Parse(textBox1.Text));
+            OracleCommand cmd = new OracleCommand("DELETE FROM COMANDA WHERE IDCOMANDA = :IDCOMANDA", c);
+            cmd.Parameters.Add("IDCOMANDA", textBox1.Text);
+            OracleDataReader dr = cmd.ExecuteReader();
+
             MessageBox.Show("Comanda anulata cu succes!");
+            c.Close();
         }
     }
 }
