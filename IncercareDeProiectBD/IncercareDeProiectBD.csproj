@@ -234,6 +234,9 @@
     <EmbeddedResource Include="evidentaClientiForm.resx">
       <DependentUpon>evidentaClientiForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="evidentaComenziForm.resx">
+      <DependentUpon>evidentaComenziForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="evidentaFurnizoriForm.resx">
       <DependentUpon>evidentaFurnizoriForm.cs</DependentUpon>
     </EmbeddedResource>

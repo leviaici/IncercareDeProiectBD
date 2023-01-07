@@ -57,7 +57,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(670, 340);
+            this.button5.Location = new System.Drawing.Point(670, 181);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(118, 46);
             this.button5.TabIndex = 59;
@@ -69,7 +69,7 @@
             // 
             this.buttonCloseApp.AccessibleDescription = "buttonCloseApp";
             this.buttonCloseApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCloseApp.Location = new System.Drawing.Point(670, 392);
+            this.buttonCloseApp.Location = new System.Drawing.Point(670, 233);
             this.buttonCloseApp.Name = "buttonCloseApp";
             this.buttonCloseApp.Size = new System.Drawing.Size(118, 46);
             this.buttonCloseApp.TabIndex = 58;
@@ -170,7 +170,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(12, 294);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(652, 144);
+            this.dataGridView2.Size = new System.Drawing.Size(776, 144);
             this.dataGridView2.TabIndex = 90;
             // 
             // evidentaReteteForm
