@@ -34,6 +34,11 @@ namespace IncercareDeProiectBD
             c.Close();
         }
 
+        public void hideForm()
+        {
+            Hide();
+        }
+
         private void buttonCloseApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -68,6 +73,20 @@ namespace IncercareDeProiectBD
             cmd.Parameters.Add("TOTAL", textBox3.Text);
             cmd.Parameters.Add("TIPPLATA", textBox5.Text);
             OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleCommand cmd2 = new OracleCommand();
+            cmd2.Connection = c;
+            cmd2.CommandText = "SELECT * FROM COMANDA WHERE IDCOMANDA = (SELECT MAX(IDCOMANDA) FROM COMANDA)";
+            OracleDataReader dr2 = cmd2.ExecuteReader();
+            OracleDataAdapter da2 = new OracleDataAdapter(cmd2);
+            DataTable dt2 = new DataTable();
+            da2.Fill(dt2);
+            dataGridView1.DataSource = dt2;
+
+            MessageBox.Show("Vei fi redirectionat la pagina de produse din comenzi pentru a finaliza modificarea!");
+            var newForm = new evidentaProduseDinComenziForm();
+            hideForm();
+            newForm.Show();
 
             c.Close();
         }
@@ -134,6 +153,20 @@ namespace IncercareDeProiectBD
             cmd.Parameters.Add("TIPPLATA", textBox5.Text);
             cmd.Parameters.Add("IDCOMANDA", textBox1.Text);
             OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleCommand cmd2 = new OracleCommand();
+            cmd2.Connection = c;
+            cmd2.CommandText = "SELECT * FROM COMANDA WHERE IDCOMANDA = (SELECT MAX(IDCOMANDA) FROM COMANDA)";
+            OracleDataReader dr2 = cmd2.ExecuteReader();
+            OracleDataAdapter da2 = new OracleDataAdapter(cmd2);
+            DataTable dt2 = new DataTable();
+            da2.Fill(dt2);
+            dataGridView1.DataSource = dt2;
+
+            MessageBox.Show("Vei fi redirectionat la pagina de produse din comenzi pentru a finaliza modificarea!");
+            var newForm = new evidentaProduseDinComenziForm();
+            hideForm();
+            newForm.Show();
 
             c.Close();
         }
