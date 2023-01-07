@@ -52,10 +52,10 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd2 = new OracleCommand();
             cmd2.Connection = c;
-            cmd2.CommandText = "SELECT * FROM INGREDIENT WHERE IDINGREDIENT = INGREDIENT_IDINGREDIENT_SEQ.currval";
+            cmd2.CommandText = "SELECT * FROM INGREDIENT WHERE IDINGREDIENT = (SELECT MAX(IDINGREDIENT) FROM INGREDIENT)";
             OracleDataReader dr2 = cmd2.ExecuteReader();
 
-            OracleDataAdapter da2 = new OracleDataAdapter(cmd);
+            OracleDataAdapter da2 = new OracleDataAdapter(cmd2);
             DataTable dt2 = new DataTable();
             da2.Fill(dt2);
             dataGridView1.DataSource = dt2;
@@ -69,9 +69,8 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "UPDATE INGREDIENT SET CANTITATE = (INGREDIENT.CANTITATE + (SELECT CANTITATE FROM FURNIZOR WHERE IDINGREDIENT = :IDINGREDIENT)) WHERE IDINGREDIENT = :IDingredient)";
-            cmd.Parameters.Add("IDINGREDIENT", textBox8.Text);
-            cmd.Parameters.Add("IDINGREDIENT", textBox8.Text);
+            cmd.CommandText = "UPDATE INGREDIENT SET CANTITATE = (INGREDIENT.CANTITATE + (SELECT CANTITATE FROM FURNIZOR WHERE IDINGREDIENT = :IDINGREDIENT)) WHERE IDINGREDIENT = :IDINGREDIENT";
+            cmd.Parameters.Add("IDINGREDIENT", textBox7.Text);
             OracleDataReader dr = cmd.ExecuteReader();
 
             c.Close();
@@ -161,6 +160,21 @@ namespace IncercareDeProiectBD
         private void buttonCloseApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "INSERT INTO FURNIZOR(IDFURNIZOR, IDINGREDIENT, NUME, CANTITATE) VALUES (FURNIZOR_IDFURNIZOR_SEQ.nextval, :IDINGREDIENT, :NUME, :CANTITATE)";
+            cmd.Parameters.Add("IDINGREDIENT", textBox7.Text);
+            cmd.Parameters.Add("NUME", textBox6.Text);
+            cmd.Parameters.Add("CANTITATE", textBox5.Text);
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            c.Close();
         }
     }
 }
