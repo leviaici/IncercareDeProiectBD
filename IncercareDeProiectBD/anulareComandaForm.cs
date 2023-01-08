@@ -23,6 +23,11 @@ namespace IncercareDeProiectBD
             InitializeComponent();
         }
 
+        public void hideForm()
+        {
+            Hide();
+        }
+
         private void buttonCloseApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -42,6 +47,13 @@ namespace IncercareDeProiectBD
 
             MessageBox.Show("Comanda anulata cu succes!");
             c.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var newForm = new clientForm();
+            hideForm();
+            newForm.Show();
         }
     }
 }

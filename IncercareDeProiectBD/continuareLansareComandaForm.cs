@@ -31,11 +31,18 @@ namespace IncercareDeProiectBD
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
+
+        public void hideForm()
+        {
+            Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //c.Open();
+            c.Open();
 
             OracleCommand cmd2 = new OracleCommand();
             cmd2.Connection = c;
@@ -45,13 +52,20 @@ namespace IncercareDeProiectBD
             //cmd2.Parameters.Add("IDPRODUS", textBox2.Text);
             OracleDataReader dr2 = cmd2.ExecuteReader();
 
-            //c.Close();
+            c.Close();
         }
 
         private void buttonCloseApp_Click(object sender, EventArgs e)
         {
             c.Close();
             Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var newForm = new clientForm();
+            hideForm();
+            newForm.Show();
         }
     }
 }

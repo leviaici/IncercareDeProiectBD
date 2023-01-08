@@ -32,13 +32,14 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCloseApp
             // 
             this.buttonCloseApp.AccessibleDescription = "buttonCloseApp";
             this.buttonCloseApp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCloseApp.Location = new System.Drawing.Point(348, 392);
+            this.buttonCloseApp.Location = new System.Drawing.Point(421, 392);
             this.buttonCloseApp.Name = "buttonCloseApp";
             this.buttonCloseApp.Size = new System.Drawing.Size(118, 46);
             this.buttonCloseApp.TabIndex = 2;
@@ -74,12 +75,25 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.AccessibleDescription = "buttonCloseApp";
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(287, 392);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(118, 46);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Meniu principal";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // anulareComandaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -98,5 +112,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

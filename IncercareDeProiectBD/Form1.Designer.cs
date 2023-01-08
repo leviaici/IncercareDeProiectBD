@@ -44,7 +44,6 @@
             this.titlu.Size = new System.Drawing.Size(414, 37);
             this.titlu.TabIndex = 0;
             this.titlu.Text = "Baza de date - Restaurant";
-            this.titlu.Click += new System.EventHandler(this.label1_Click);
             // 
             // buttonClient
             // 

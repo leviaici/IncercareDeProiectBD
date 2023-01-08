@@ -104,5 +104,12 @@ namespace IncercareDeProiectBD
             hideForm();
             newForm.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var newForm = new clientForm();
+            hideForm();
+            newForm.Show();
+        }
     }
 }

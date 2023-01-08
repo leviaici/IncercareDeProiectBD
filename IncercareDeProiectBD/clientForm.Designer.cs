@@ -40,7 +40,7 @@
             // 
             this.titluClient.AutoSize = true;
             this.titluClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titluClient.Location = new System.Drawing.Point(213, 9);
+            this.titluClient.Location = new System.Drawing.Point(213, 77);
             this.titluClient.Name = "titluClient";
             this.titluClient.Size = new System.Drawing.Size(388, 25);
             this.titluClient.TabIndex = 0;
@@ -61,9 +61,9 @@
             // buttonVerificare
             // 
             this.buttonVerificare.AccessibleDescription = "buttonVerificare";
-            this.buttonVerificare.Location = new System.Drawing.Point(119, 159);
+            this.buttonVerificare.Location = new System.Drawing.Point(202, 142);
             this.buttonVerificare.Name = "buttonVerificare";
-            this.buttonVerificare.Size = new System.Drawing.Size(106, 23);
+            this.buttonVerificare.Size = new System.Drawing.Size(151, 70);
             this.buttonVerificare.TabIndex = 3;
             this.buttonVerificare.Text = "Verifica o comanda";
             this.buttonVerificare.UseVisualStyleBackColor = true;
@@ -71,9 +71,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(349, 158);
+            this.button2.Location = new System.Drawing.Point(467, 142);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 23);
+            this.button2.Size = new System.Drawing.Size(151, 70);
             this.button2.TabIndex = 4;
             this.button2.Text = "Lanseaza o comanda";
             this.button2.UseVisualStyleBackColor = true;
@@ -81,9 +81,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(593, 158);
+            this.button3.Location = new System.Drawing.Point(202, 285);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 23);
+            this.button3.Size = new System.Drawing.Size(151, 70);
             this.button3.TabIndex = 5;
             this.button3.Text = "Anuleaza o comanda";
             this.button3.UseVisualStyleBackColor = true;
@@ -91,9 +91,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(349, 309);
+            this.button1.Location = new System.Drawing.Point(467, 285);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 23);
+            this.button1.Size = new System.Drawing.Size(151, 70);
             this.button1.TabIndex = 6;
             this.button1.Text = "Vizualizare meniu";
             this.button1.UseVisualStyleBackColor = true;
