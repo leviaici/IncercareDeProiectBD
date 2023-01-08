@@ -23,7 +23,7 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "SELECT F.IDFURNIZOR, F.IDINGREDIENT, I.NUME AS INGREDIENT, F.NUME AS FURNIZOR, F.CANTITATE || ' ' || I.UNITATEMASURA AS CANTITATE FROM FURNIZOR F JOIN INGREDIENT I ON I.IDINGREDIENT = F.IDINGREDIENT";
+            cmd.CommandText = "SELECT F.IDFURNIZOR, F.IDINGREDIENT, I.NUME AS INGREDIENT, F.NUME AS FURNIZOR, F.CANTITATE || ' ' || I.UNITATEMASURA AS CANTITATE FROM FURNIZOR F JOIN INGREDIENT I ON I.IDINGREDIENT = F.IDINGREDIENT ORDER BY F.IDINGREDIENT";
             OracleDataReader dr = cmd.ExecuteReader();
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
@@ -151,7 +151,7 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "SELECT F.IDFURNIZOR, F.IDINGREDIENT, I.NUME AS INGREDIENT, F.NUME AS FURNIZOR, F.CANTITATE || ' ' || I.UNITATEMASURA AS CANTITATE FROM FURNIZOR F JOIN INGREDIENT I ON I.IDINGREDIENT = F.IDINGREDIENT";
+            cmd.CommandText = "SELECT F.IDFURNIZOR, F.IDINGREDIENT, I.NUME AS INGREDIENT, F.NUME AS FURNIZOR, F.CANTITATE || ' ' || I.UNITATEMASURA AS CANTITATE FROM FURNIZOR F JOIN INGREDIENT I ON I.IDINGREDIENT = F.IDINGREDIENT ORDER BY F.IDINGREDIENT";
             OracleDataReader dr = cmd.ExecuteReader();
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
@@ -187,6 +187,23 @@ namespace IncercareDeProiectBD
             var newForm = new managerLogatForm();
             hideForm();
             newForm.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT F.IDFURNIZOR, F.IDINGREDIENT, I.NUME AS INGREDIENT, F.NUME AS FURNIZOR, F.CANTITATE || ' ' || I.UNITATEMASURA AS CANTITATE FROM FURNIZOR F JOIN INGREDIENT I ON I.IDINGREDIENT = F.IDINGREDIENT ORDER BY F.NUME";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
         }
     }
 }

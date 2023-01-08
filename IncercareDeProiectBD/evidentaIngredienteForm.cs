@@ -23,7 +23,7 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "SELECT * FROM INGREDIENT";
+            cmd.CommandText = "SELECT * FROM INGREDIENT ORDER BY IDINGREDIENT";
             OracleDataReader dr = cmd.ExecuteReader();
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
@@ -55,7 +55,7 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "SELECT * FROM INGREDIENT";
+            cmd.CommandText = "SELECT * FROM INGREDIENT ORDER BY IDINGREDIENT";
             OracleDataReader dr = cmd.ExecuteReader();
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
@@ -145,6 +145,57 @@ namespace IncercareDeProiectBD
             var newForm = new managerLogatForm();
             hideForm();
             newForm.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT * FROM INGREDIENT ORDER BY NUME";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT * FROM INGREDIENT ORDER BY CANTITATE";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT * FROM INGREDIENT ORDER BY UNITATEMASURA";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
         }
     }
 }

@@ -41,7 +41,7 @@
             // 
             this.titluManager.AutoSize = true;
             this.titluManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titluManager.Location = new System.Drawing.Point(127, 9);
+            this.titluManager.Location = new System.Drawing.Point(127, 85);
             this.titluManager.Name = "titluManager";
             this.titluManager.Size = new System.Drawing.Size(567, 25);
             this.titluManager.TabIndex = 0;

@@ -23,7 +23,7 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "SELECT * FROM COMANDA";
+            cmd.CommandText = "SELECT * FROM COMANDA ORDER BY IDCOMANDA";
             OracleDataReader dr = cmd.ExecuteReader();
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
@@ -50,7 +50,7 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "SELECT * FROM COMANDA";
+            cmd.CommandText = "SELECT * FROM COMANDA ORDER BY IDCOMANDA";
             OracleDataReader dr = cmd.ExecuteReader();
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
@@ -189,6 +189,74 @@ namespace IncercareDeProiectBD
             var newForm = new managerLogatForm();
             hideForm();
             newForm.Show();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT * FROM COMANDA ORDER BY IDCLIENT";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT * FROM COMANDA ORDER BY DATACOMANDA";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT * FROM COMANDA ORDER BY TOTAL";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT * FROM COMANDA ORDER BY TIPPLATA";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
         }
     }
 }

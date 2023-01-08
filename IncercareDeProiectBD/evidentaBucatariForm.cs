@@ -45,7 +45,7 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "SELECT * FROM BUCATAR";
+            cmd.CommandText = "SELECT * FROM BUCATAR ORDER BY IDBUCATAR";
             OracleDataReader dr = cmd.ExecuteReader();
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
@@ -138,6 +138,40 @@ namespace IncercareDeProiectBD
             var newForm = new managerLogatForm();
             hideForm();
             newForm.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT * FROM BUCATAR ORDER BY NUME";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT * FROM BUCATAR ORDER BY SALARIU";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
         }
     }
 }

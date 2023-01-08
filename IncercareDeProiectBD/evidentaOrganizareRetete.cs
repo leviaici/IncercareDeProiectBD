@@ -23,7 +23,7 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "SELECT DR.IDDETALIURETETA, DR.IDRETETA, R.NUME AS PRODUS, DR.IDINGREDIENT, I.NUME, DR.CANTITATE || ' ' || I.UNITATEMASURA AS CANTITATE FROM DETALIURETETA DR JOIN RETETA R ON DR.IDRETETA = R.IDRETETA JOIN INGREDIENT I ON I.IDINGREDIENT = DR.IDINGREDIENT";
+            cmd.CommandText = "SELECT DR.IDDETALIURETETA, DR.IDRETETA, R.NUME AS PRODUS, DR.IDINGREDIENT, I.NUME, DR.CANTITATE || ' ' || I.UNITATEMASURA AS CANTITATE FROM DETALIURETETA DR JOIN RETETA R ON DR.IDRETETA = R.IDRETETA JOIN INGREDIENT I ON I.IDINGREDIENT = DR.IDINGREDIENT ORDER BY DR.IDDETALIURETETA";
             OracleDataReader dr = cmd.ExecuteReader();
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
@@ -33,7 +33,7 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd2 = new OracleCommand();
             cmd2.Connection = c;
-            cmd2.CommandText = "SELECT * FROM INGREDIENT";
+            cmd2.CommandText = "SELECT * FROM INGREDIENT ORDER BY IDINGREDIENT";
             OracleDataReader dr2 = cmd2.ExecuteReader();
 
             OracleDataAdapter da2 = new OracleDataAdapter(cmd2);
@@ -60,7 +60,7 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "SELECT DR.IDDETALIURETETA, DR.IDRETETA, R.NUME AS PRODUS, DR.IDINGREDIENT, I.NUME, DR.CANTITATE || ' ' || I.UNITATEMASURA AS CANTITATE FROM DETALIURETETA DR JOIN RETETA R ON DR.IDRETETA = R.IDRETETA JOIN INGREDIENT I ON I.IDINGREDIENT = DR.IDINGREDIENT";
+            cmd.CommandText = "SELECT DR.IDDETALIURETETA, DR.IDRETETA, R.NUME AS PRODUS, DR.IDINGREDIENT, I.NUME, DR.CANTITATE || ' ' || I.UNITATEMASURA AS CANTITATE FROM DETALIURETETA DR JOIN RETETA R ON DR.IDRETETA = R.IDRETETA JOIN INGREDIENT I ON I.IDINGREDIENT = DR.IDINGREDIENT ORDER BY DR.IDDETALIURETETA";
             OracleDataReader dr = cmd.ExecuteReader();
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
@@ -70,7 +70,7 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd2 = new OracleCommand();
             cmd2.Connection = c;
-            cmd2.CommandText = "SELECT * FROM INGREDIENT";
+            cmd2.CommandText = "SELECT * FROM INGREDIENT ORDER BY IDINGREDIENT";
             OracleDataReader dr2 = cmd2.ExecuteReader();
 
             OracleDataAdapter da2 = new OracleDataAdapter(cmd2);
@@ -148,6 +148,40 @@ namespace IncercareDeProiectBD
             var newForm = new managerLogatForm();
             hideForm();
             newForm.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT DR.IDDETALIURETETA, DR.IDRETETA, R.NUME AS PRODUS, DR.IDINGREDIENT, I.NUME, DR.CANTITATE || ' ' || I.UNITATEMASURA AS CANTITATE FROM DETALIURETETA DR JOIN RETETA R ON DR.IDRETETA = R.IDRETETA JOIN INGREDIENT I ON I.IDINGREDIENT = DR.IDINGREDIENT ORDER BY R.IDRETETA";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT DR.IDDETALIURETETA, DR.IDRETETA, R.NUME AS PRODUS, DR.IDINGREDIENT, I.NUME, DR.CANTITATE || ' ' || I.UNITATEMASURA AS CANTITATE FROM DETALIURETETA DR JOIN RETETA R ON DR.IDRETETA = R.IDRETETA JOIN INGREDIENT I ON I.IDINGREDIENT = DR.IDINGREDIENT ORDER BY I.IDINGREDIENT";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
         }
     }
 }

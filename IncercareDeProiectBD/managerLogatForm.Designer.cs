@@ -45,7 +45,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(298, 31);
+            this.label1.Location = new System.Drawing.Point(296, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(183, 31);
             this.label1.TabIndex = 0;
@@ -55,10 +55,10 @@
             // 
             this.clientiButton.AccessibleDescription = "clientiButton";
             this.clientiButton.AccessibleName = "clientiButton";
-            this.clientiButton.Location = new System.Drawing.Point(50, 136);
+            this.clientiButton.Location = new System.Drawing.Point(57, 113);
             this.clientiButton.Name = "clientiButton";
             this.clientiButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.clientiButton.Size = new System.Drawing.Size(126, 40);
+            this.clientiButton.Size = new System.Drawing.Size(177, 70);
             this.clientiButton.TabIndex = 1;
             this.clientiButton.Text = "Clienti";
             this.clientiButton.UseVisualStyleBackColor = true;
@@ -67,9 +67,9 @@
             // button2
             // 
             this.button2.AccessibleName = "buttonBucatari";
-            this.button2.Location = new System.Drawing.Point(324, 98);
+            this.button2.Location = new System.Drawing.Point(302, 113);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 40);
+            this.button2.Size = new System.Drawing.Size(177, 70);
             this.button2.TabIndex = 2;
             this.button2.Text = "Bucatari";
             this.button2.UseVisualStyleBackColor = true;
@@ -77,9 +77,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(593, 136);
+            this.button3.Location = new System.Drawing.Point(549, 113);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(126, 40);
+            this.button3.Size = new System.Drawing.Size(177, 70);
             this.button3.TabIndex = 3;
             this.button3.Text = "Meniu";
             this.button3.UseVisualStyleBackColor = true;
@@ -87,9 +87,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(50, 248);
+            this.button4.Location = new System.Drawing.Point(302, 206);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(126, 40);
+            this.button4.Size = new System.Drawing.Size(177, 70);
             this.button4.TabIndex = 4;
             this.button4.Text = "Ingrediente";
             this.button4.UseVisualStyleBackColor = true;
@@ -97,9 +97,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(324, 204);
+            this.button5.Location = new System.Drawing.Point(57, 206);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(126, 40);
+            this.button5.Size = new System.Drawing.Size(177, 70);
             this.button5.TabIndex = 5;
             this.button5.Text = "Furnizori";
             this.button5.UseVisualStyleBackColor = true;
@@ -107,9 +107,9 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(593, 248);
+            this.button6.Location = new System.Drawing.Point(549, 206);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(126, 40);
+            this.button6.Size = new System.Drawing.Size(177, 70);
             this.button6.TabIndex = 6;
             this.button6.Text = "Retete";
             this.button6.UseVisualStyleBackColor = true;
@@ -117,9 +117,9 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(50, 364);
+            this.button7.Location = new System.Drawing.Point(57, 298);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(126, 40);
+            this.button7.Size = new System.Drawing.Size(177, 70);
             this.button7.TabIndex = 7;
             this.button7.Text = "Comenzi";
             this.button7.UseVisualStyleBackColor = true;
@@ -127,9 +127,9 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(324, 321);
+            this.button8.Location = new System.Drawing.Point(302, 298);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(126, 40);
+            this.button8.Size = new System.Drawing.Size(177, 70);
             this.button8.TabIndex = 8;
             this.button8.Text = "Produse din comenzi";
             this.button8.UseVisualStyleBackColor = true;
@@ -137,9 +137,9 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(593, 364);
+            this.button9.Location = new System.Drawing.Point(549, 298);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(126, 40);
+            this.button9.Size = new System.Drawing.Size(177, 70);
             this.button9.TabIndex = 9;
             this.button9.Text = "Organizare retete";
             this.button9.UseVisualStyleBackColor = true;

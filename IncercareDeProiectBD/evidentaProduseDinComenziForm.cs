@@ -23,7 +23,7 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "SELECT PC.IDPRODUSECOMANDA, PC.IDCOMANDA, PC.IDPRODUS, P.NUME, PC.PRETPERUNITATE FROM PRODUSECOMANDA PC JOIN PRODUS P ON P.IDPRODUS = PC.IDPRODUS";
+            cmd.CommandText = "SELECT PC.IDPRODUSECOMANDA, PC.IDCOMANDA, PC.IDPRODUS, P.NUME, PC.PRETPERUNITATE FROM PRODUSECOMANDA PC JOIN PRODUS P ON P.IDPRODUS = PC.IDPRODUS ORDER BY PC.IDPRODUSECOMANDA";
             OracleDataReader dr = cmd.ExecuteReader();
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
@@ -50,7 +50,7 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "SELECT PC.IDPRODUSECOMANDA, PC.IDCOMANDA, PC.IDPRODUS, P.NUME, PC.PRETPERUNITATE FROM PRODUSECOMANDA PC JOIN PRODUS P ON P.IDPRODUS = PC.IDPRODUS";
+            cmd.CommandText = "SELECT PC.IDPRODUSECOMANDA, PC.IDCOMANDA, PC.IDPRODUS, P.NUME, PC.PRETPERUNITATE FROM PRODUSECOMANDA PC JOIN PRODUS P ON P.IDPRODUS = PC.IDPRODUS ORDER BY PC.IDPRODUSECOMANDA";
             OracleDataReader dr = cmd.ExecuteReader();
 
             OracleDataAdapter da = new OracleDataAdapter(cmd);
@@ -153,6 +153,57 @@ namespace IncercareDeProiectBD
             var newForm = new managerLogatForm();
             hideForm();
             newForm.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT PC.IDPRODUSECOMANDA, PC.IDCOMANDA, PC.IDPRODUS, P.NUME, PC.PRETPERUNITATE FROM PRODUSECOMANDA PC JOIN PRODUS P ON P.IDPRODUS = PC.IDPRODUS ORDER BY PC.IDCOMANDA";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT PC.IDPRODUSECOMANDA, PC.IDCOMANDA, PC.IDPRODUS, P.NUME, PC.PRETPERUNITATE FROM PRODUSECOMANDA PC JOIN PRODUS P ON P.IDPRODUS = PC.IDPRODUS ORDER BY P.IDPRODUS";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT PC.IDPRODUSECOMANDA, PC.IDCOMANDA, PC.IDPRODUS, P.NUME, PC.PRETPERUNITATE FROM PRODUSECOMANDA PC JOIN PRODUS P ON P.IDPRODUS = PC.IDPRODUS ORDER BY PC.PRETPERUNITATE";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
         }
     }
 }

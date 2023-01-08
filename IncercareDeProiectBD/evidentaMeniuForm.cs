@@ -178,5 +178,73 @@ namespace IncercareDeProiectBD
             hideForm();
             newForm.Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT P.IDPRODUS, P.NUME AS NUMEPRODUS, P.PRETDEPRODUCTIE || ' LEI' AS PRETDEPRODUCTIE, P.PRETDEVANZARE || ' LEI' AS PRETDEVANZARE, CP.NUME AS CATEGORIEPRODUS, R.IDRETETA, B.NUME || ' ' || B.PRENUME AS NUMEBUCATAR, B.POST FROM PRODUS P JOIN CATEGORIEPRODUS CP ON CP.IDCATEGORIEPRODUS = P.IDCATEGORIEPRODUS JOIN RETETA R ON R.IDRETETA = P.IDRETETA JOIN BUCATAR B ON B.IDBUCATAR = R.IDBUCATAR ORDER BY P.NUME";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT P.IDPRODUS, P.NUME AS NUMEPRODUS, P.PRETDEPRODUCTIE || ' LEI' AS PRETDEPRODUCTIE, P.PRETDEVANZARE || ' LEI' AS PRETDEVANZARE, CP.NUME AS CATEGORIEPRODUS, R.IDRETETA, B.NUME || ' ' || B.PRENUME AS NUMEBUCATAR, B.POST FROM PRODUS P JOIN CATEGORIEPRODUS CP ON CP.IDCATEGORIEPRODUS = P.IDCATEGORIEPRODUS JOIN RETETA R ON R.IDRETETA = P.IDRETETA JOIN BUCATAR B ON B.IDBUCATAR = R.IDBUCATAR ORDER BY P.IDCATEGORIEPRODUS";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT P.IDPRODUS, P.NUME AS NUMEPRODUS, P.PRETDEPRODUCTIE || ' LEI' AS PRETDEPRODUCTIE, P.PRETDEVANZARE || ' LEI' AS PRETDEVANZARE, CP.NUME AS CATEGORIEPRODUS, R.IDRETETA, B.NUME || ' ' || B.PRENUME AS NUMEBUCATAR, B.POST FROM PRODUS P JOIN CATEGORIEPRODUS CP ON CP.IDCATEGORIEPRODUS = P.IDCATEGORIEPRODUS JOIN RETETA R ON R.IDRETETA = P.IDRETETA JOIN BUCATAR B ON B.IDBUCATAR = R.IDBUCATAR ORDER BY P.PRETDEPRODUCTIE";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT P.IDPRODUS, P.NUME AS NUMEPRODUS, P.PRETDEPRODUCTIE || ' LEI' AS PRETDEPRODUCTIE, P.PRETDEVANZARE || ' LEI' AS PRETDEVANZARE, CP.NUME AS CATEGORIEPRODUS, R.IDRETETA, B.NUME || ' ' || B.PRENUME AS NUMEBUCATAR, B.POST FROM PRODUS P JOIN CATEGORIEPRODUS CP ON CP.IDCATEGORIEPRODUS = P.IDCATEGORIEPRODUS JOIN RETETA R ON R.IDRETETA = P.IDRETETA JOIN BUCATAR B ON B.IDBUCATAR = R.IDBUCATAR ORDER BY P.PRETDEVANZARE";
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
     }
 }
