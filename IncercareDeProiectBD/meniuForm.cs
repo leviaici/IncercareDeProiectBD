@@ -30,6 +30,18 @@ namespace IncercareDeProiectBD
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+
+            OracleCommand cmd2 = new OracleCommand();
+            cmd2.Connection = c;
+            cmd2.CommandText = "SELECT P.IDCATEGORIEPRODUS, PC.NUME AS NUMECATEGORIE, MIN(P.PRETDEVANZARE) || ' Lei' AS PRETMINIM FROM PRODUS P JOIN CATEGORIEPRODUS PC ON PC.IDCATEGORIEPRODUS = P.IDCATEGORIEPRODUS GROUP BY P.IDCATEGORIEPRODUS, PC.NUME HAVING MIN(P.PRETDEVANZARE) <= 20 ORDER BY IDCATEGORIEPRODUS";
+            OracleDataReader dr2 = cmd2.ExecuteReader();
+
+            OracleDataAdapter da2 = new OracleDataAdapter(cmd2);
+            DataTable dt2 = new DataTable();
+            da2.Fill(dt2);
+            dataGridView2.DataSource = dt2;
+
+            c.Close();
         }
 
         public void hideForm()
