@@ -34,6 +34,11 @@ namespace IncercareDeProiectBD
             c.Close();
         }
 
+        public void hideForm()
+        {
+            Hide();
+        }
+
         private void buttonCloseApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -120,6 +125,13 @@ namespace IncercareDeProiectBD
             dataGridView1.DataSource = dt;
 
             c.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            var newForm = new managerLogatForm();
+            hideForm();
+            newForm.Show();
         }
     }
 }

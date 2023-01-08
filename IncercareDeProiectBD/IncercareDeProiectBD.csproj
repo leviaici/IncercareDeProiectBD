@@ -249,6 +249,9 @@
     <EmbeddedResource Include="evidentaOrganizareRetete.resx">
       <DependentUpon>evidentaOrganizareRetete.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="evidentaProduseDinComenziForm.resx">
+      <DependentUpon>evidentaProduseDinComenziForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="evidentaReteteForm.resx">
       <DependentUpon>evidentaReteteForm.cs</DependentUpon>
     </EmbeddedResource>

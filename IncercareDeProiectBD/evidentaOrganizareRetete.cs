@@ -49,6 +49,11 @@ namespace IncercareDeProiectBD
             Application.Exit();
         }
 
+        public void hideForm()
+        {
+            Hide();
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             c.Open();
@@ -136,6 +141,13 @@ namespace IncercareDeProiectBD
             OracleDataReader dr = cmd.ExecuteReader();
 
             c.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            var newForm = new managerLogatForm();
+            hideForm();
+            newForm.Show();
         }
     }
 }
