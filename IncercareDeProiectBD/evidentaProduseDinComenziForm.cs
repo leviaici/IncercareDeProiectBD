@@ -107,6 +107,13 @@ namespace IncercareDeProiectBD
             cmd.Parameters.Add("IDPRODUSECOMANDA", textBox1.Text);
             OracleDataReader dr = cmd.ExecuteReader();
 
+            OracleCommand cmd2 = new OracleCommand();
+            cmd2.Connection = c;
+            cmd2.CommandText = "UPDATE COMANDA SET TOTAL = (COMANDA.TOTAL - (SELECT PRETPERUNITATE FROM PRODUSECOMANDA WHERE IDCOMANDA = :IDCOMANDA AND IDPRODUSECOMANDA = :IDPRODUSECOMANDA)) WHERE IDCOMANDA = :IDCOMANDA";
+            cmd2.Parameters.Add("IDCOMANDA", textBox2.Text);
+            cmd2.Parameters.Add("IDPRODUSECOMANDA", textBox1.Text);
+            OracleDataReader dr2 = cmd2.ExecuteReader();
+
             c.Close();
         }
 
@@ -136,6 +143,13 @@ namespace IncercareDeProiectBD
         {
             c.Open();
 
+            OracleCommand cmd2 = new OracleCommand();
+            cmd2.Connection = c;
+            cmd2.CommandText = "UPDATE COMANDA SET TOTAL = (COMANDA.TOTAL - (SELECT PRETPERUNITATE FROM PRODUSECOMANDA WHERE IDCOMANDA = :IDCOMANDA AND IDPRODUSECOMANDA = :IDPRODUSECOMANDA)) WHERE IDCOMANDA = :IDCOMANDA";
+            cmd2.Parameters.Add("IDCOMANDA", textBox2.Text);
+            cmd2.Parameters.Add("IDPRODUSECOMANDA", textBox1.Text);
+            OracleDataReader dr2 = cmd2.ExecuteReader();
+
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
             cmd.CommandText = "UPDATE PRODUSECOMANDA SET IDCOMANDA = :IDCOMANDA, IDPRODUS = :IDPRODUS, PRETPERUNITATE = :PRETPERUNITATE WHERE IDPRODUSECOMANDA = :IDPRODUSECOMANDA";
@@ -144,6 +158,13 @@ namespace IncercareDeProiectBD
             cmd.Parameters.Add("PRETPERUNITATE", textBox3.Text);
             cmd.Parameters.Add("IDPRODUSECOMANDA", textBox1.Text);
             OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleCommand cmd3 = new OracleCommand();
+            cmd3.Connection = c;
+            cmd3.CommandText = "UPDATE COMANDA SET TOTAL = (COMANDA.TOTAL + (SELECT PRETPERUNITATE FROM PRODUSECOMANDA WHERE IDCOMANDA = :IDCOMANDA AND IDPRODUSECOMANDA = :IDPRODUSECOMANDA)) WHERE IDCOMANDA = :IDCOMANDA";
+            cmd3.Parameters.Add("IDCOMANDA", textBox2.Text);
+            cmd3.Parameters.Add("IDPRODUSECOMANDA", textBox1.Text);
+            OracleDataReader dr3 = cmd3.ExecuteReader();
 
             c.Close();
         }

@@ -52,6 +52,12 @@ namespace IncercareDeProiectBD
             //cmd2.Parameters.Add("IDPRODUS", textBox2.Text);
             OracleDataReader dr2 = cmd2.ExecuteReader();
 
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "UPDATE COMANDA SET TOTAL = (COMANDA.TOTAL + (SELECT PRETPERUNITATE FROM PRODUSECOMANDA WHERE IDCOMANDA = :IDCOMANDA AND IDPRODUSECOMANDA = (SELECT MAX(IDPRODUSECOMANDA) FROM PRODUSECOMANDA))) WHERE IDCOMANDA = :IDCOMANDA";
+            cmd.Parameters.Add("IDCOMANDA", textBox1.Text);
+            OracleDataReader dr = cmd.ExecuteReader();
+
             c.Close();
         }
 

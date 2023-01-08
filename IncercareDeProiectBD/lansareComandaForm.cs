@@ -68,18 +68,16 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd3 = new OracleCommand();
             cmd3.Connection = c;
-            cmd3.CommandText = "INSERT INTO COMANDA(IDCOMANDA, IDCLIENT, DATACOMANDA, TOTAL, TVA, TIPPLATA) VALUES (COMANDA_IDCOMANDA_SEQ.nextval, :IDCLIENT, SYSDATE, :TOTAL, 9, :TIPPLATA)";
+            cmd3.CommandText = "INSERT INTO COMANDA(IDCOMANDA, IDCLIENT, DATACOMANDA, TVA, TIPPLATA) VALUES (COMANDA_IDCOMANDA_SEQ.nextval, :IDCLIENT, SYSDATE, 9, :TIPPLATA)";
             
             OracleCommand cmd4 = new OracleCommand();
             cmd4.Connection = c;
-            cmd4.CommandText = "SELECT * FROM COMANDA WHERE IDCLIENT = :IDCLIENT AND TOTAL = :TOTAL AND TIPPLATA = :TIPPLATA";
+            cmd4.CommandText = "SELECT * FROM COMANDA WHERE IDCLIENT = :IDCLIENT AND TIPPLATA = :TIPPLATA ORDER BY IDCOMANDA DESC";
             
             cmd3.Parameters.Add("IDCLIENT", textBox4.Text);
-            cmd3.Parameters.Add("TOTAL", textBox3.Text);
             cmd3.Parameters.Add("TIPPLATA", textBox5.Text);
             
             cmd4.Parameters.Add("IDCLIENT", textBox4.Text);
-            cmd4.Parameters.Add("TOTAL", textBox3.Text);
             cmd4.Parameters.Add("TIPPLATA", textBox5.Text);
             
             OracleDataReader dr3 = cmd3.ExecuteReader();
@@ -89,7 +87,7 @@ namespace IncercareDeProiectBD
             daNew.Fill(dtNew);
             dataGridView2.DataSource = dtNew;
 
-            MessageBox.Show("Comanda lansata cu succes!");
+            MessageBox.Show("Comanda lansata cu succes! Vei fi redirectionat pentru a plasa produsele in comanda!");
 
             c.Close();
 
