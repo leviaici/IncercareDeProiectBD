@@ -43,7 +43,7 @@ namespace IncercareDeProiectBD
                 MessageBox.Show("Creditentiale gresite!");
                 if (counter == 3)
                 {
-                    MessageBox.Show("Ti-am spus! Accesul persoanelor neautorizate este strict interzis! ciscopapa55!");
+                    MessageBox.Show("Ti-am spus! Accesul persoanelor neautorizate este strict interzis!");
                     Application.Exit();
                 }
             }

@@ -84,9 +84,7 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "DELETE FROM CLIENT WHERE NUME = :NUME AND PRENUME = :PRENUME AND IDCLIENT = :IDCLIENT";
-            cmd.Parameters.Add("NUME", textBox2.Text);
-            cmd.Parameters.Add("PRENUME", textBox3.Text);
+            cmd.CommandText = "DELETE FROM CLIENT WHERE IDCLIENT = :IDCLIENT";
             cmd.Parameters.Add("IDCLIENT", textBox1.Text);
             OracleDataReader dr = cmd.ExecuteReader();
 

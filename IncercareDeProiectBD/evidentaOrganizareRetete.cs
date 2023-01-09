@@ -183,5 +183,24 @@ namespace IncercareDeProiectBD
 
             c.Close();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            c.Open();
+
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = c;
+            cmd.CommandText = "SELECT DR.IDDETALIURETETA, DR.IDRETETA, R.NUME AS PRODUS, DR.IDINGREDIENT, I.NUME, DR.CANTITATE || ' ' || I.UNITATEMASURA AS CANTITATE FROM DETALIURETETA DR JOIN RETETA R ON DR.IDRETETA = R.IDRETETA JOIN INGREDIENT I ON I.IDINGREDIENT = DR.IDINGREDIENT WHERE DR.IDRETETA = :IDRETETA AND DR.IDINGREDIENT = :IDINGREDIENT ORDER BY DR.IDDETALIURETETA";
+            cmd.Parameters.Add("IDRETETA", textBox1.Text);
+            cmd.Parameters.Add("IDINGREDIENT", textBox2.Text);
+            OracleDataReader dr = cmd.ExecuteReader();
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+            c.Close();
+        }
     }
 }

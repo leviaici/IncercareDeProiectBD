@@ -105,11 +105,8 @@ namespace IncercareDeProiectBD
 
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = c;
-            cmd.CommandText = "UPDATE BUCATAR SET DATAPLECARE = SYSDATE WHERE IDBUCATAR = :IDBUCATAR AND NUME = :NUME AND PRENUME = :PRENUME AND POST = :POST";
+            cmd.CommandText = "UPDATE BUCATAR SET DATAPLECARE = SYSDATE WHERE IDBUCATAR = :IDBUCATAR";
             cmd.Parameters.Add("IDBUCATAR", textBox1.Text);
-            cmd.Parameters.Add("NUME", textBox2.Text);
-            cmd.Parameters.Add("PRENUME", textBox3.Text);
-            cmd.Parameters.Add("POST", textBox6.Text);
             OracleDataReader dr = cmd.ExecuteReader();
 
             c.Close();
